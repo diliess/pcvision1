@@ -52,20 +52,21 @@ def gaussian_filter(img, K_size=3, sigma=1.3):
  
     out = np.clip(out, 0, 255)
  
-    # out = out[pad: pad + H, pad: pad + W].astype(np.uint8)
+    out = out[pad: pad + H, pad: pad + W].astype(np.uint8)
  
     return out
  
 # Read image
  
-img = cv2.imread("data/noise2.png")
+img = cv2.imread("data/noise1.jpeg")
  
 # Gaussian Filter
  
 out = gaussian_filter(img, K_size=3, sigma=1.3)
  
 # Save result
- 
+
+
 cv2.imwrite("out.jpg", out)
  
 cv2.imshow("result", out)

@@ -29,11 +29,9 @@ def gaussian(img:np.ndarray):
 
 img=cv2.imread('data/noise3.png')
 # img_test=np.array([[1,1,1,1],[2,2,2,3],[5,4,3,1]]).reshape(3,4,1)
-outimg=cv2.GaussianBlur(img,(3,3),0,0)
+outimg=gaussian(img)
 print(outimg.shape)
-cv2.imwrite("data/hand_write_gauss1.jpg",outimg[:,:,0])
-cv2.imwrite("data/hand_write_gauss2.jpg",outimg[:,:,1])
-cv2.imwrite("data/hand_write_gauss3.jpg",outimg[:,:,2])
+
 cv2.imshow("origin",outimg) 
 
 cv2.waitKey(0)
